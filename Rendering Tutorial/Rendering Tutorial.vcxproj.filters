@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Deps\glad\src\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\marble.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\metal.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\back.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\bottom.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\bottom.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\front.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\left.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\right.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\top.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="DepthFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="DepthVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="StencilVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="StencilFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Stencil_single_colour.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ToonVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ToonFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FramebufferVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FramebufferFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FramebufferScreenFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FramebufferScreenVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="EdgeFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="EdgeVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="SkyboxVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="SkyboxFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="cubemapVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="cubemapFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ssao_geometryVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ssao_geometryFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ssaoVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ssaoFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ssao_lightingFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ssao_blurFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="parallaxMappingVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="parallaxMappingFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="geometry_shaderVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="geometry_shaderFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="geometry_shaderGS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
