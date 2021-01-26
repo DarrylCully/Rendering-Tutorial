@@ -504,33 +504,30 @@ int main()
 
 // ENABLE EXPLODING GEOMETRY SHADER
 		//---------------------------------------------------
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 1.0f, 100.0f);
-		glm::mat4 view = camera.GetViewMatrix();
-		glm::mat4 model = glm::mat4(1.0f);
+		//glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 1.0f, 100.0f);
+		//glm::mat4 view = camera.GetViewMatrix();
+		//glm::mat4 model = glm::mat4(1.0f);
 		//GeoShader.Use();
 		//GeoShader.SetMat4("projection", projection);
 		//GeoShader.SetMat4("view", view);
 		//GeoShader.SetMat4("model", model);
 		//GeoShader.SetFloat("time", glfwGetTime());
 		//glActiveTexture(GL_TEXTURE0);
-		////glBindTexture(GL_TEXTURE_2D, cubeTexture);
-		////glActiveTexture(GL_TEXTURE1);
 		//glBindTexture(GL_TEXTURE_2D, floorTexture);
 		//bp.Draw(GeoShader, &model);
-		//model = glm::scale(model, glm::vec3(0.01f));
-		//Comp.Draw(GeoShader, &model);
+
 
 
 // ENABLE MODEL LOAD WITH TEXTURES TEST
-		ModelLoading.Use();
-		ModelLoading.SetMat4("projection", projection);
-		ModelLoading.SetMat4("view", view);
+		//ModelLoading.Use();
+		//ModelLoading.SetMat4("projection", projection);
+		//ModelLoading.SetMat4("view", view);
 
-		//glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-		model = glm::scale(model, glm::vec3(0.05f));	// it's a bit too big for our scene, so scale it down
-		ModelLoading.SetMat4("model", model);
-		back.Draw(ModelLoading, &model);
+		////glm::mat4 model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
+		//model = glm::scale(model, glm::vec3(0.05f));	// it's a bit too big for our scene, so scale it down
+		//ModelLoading.SetMat4("model", model);
+		//back.Draw(ModelLoading, &model);
 
 		
 
@@ -575,81 +572,81 @@ int main()
 	//// SSAO implementation
 	// 1. geometry pass: render scene's geometry/color data into gbuffer
 	// -----------------------------------------------------------------
-		//glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
-		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		//glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 50.0f);
-		//glm::mat4 view = camera.GetViewMatrix();
-		//glm::mat4 model = glm::mat4(1.0f);
-		//shaderGeometryPass.Use();
-		//shaderGeometryPass.SetMat4("projection", projection);
-		//shaderGeometryPass.SetMat4("view", view);
-		//// room cube
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0, 7.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(7.5f, 7.5f, 7.5f));
-		//shaderGeometryPass.SetMat4("model", model);
-		//shaderGeometryPass.SetInt("invertedNormals", 1); // invert normals as we're inside the cube
-		//renderCube();
-		//shaderGeometryPass.SetInt("invertedNormals", 0);
-		//// backpack model on the floor
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.5f, 0.0));
-		//model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
-		//model = glm::scale(model, glm::vec3(1.0f));
-		//shaderGeometryPass.SetMat4("model", model);
-		//bp.Draw(shaderGeometryPass, &model);
-		//glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glBindFramebuffer(GL_FRAMEBUFFER, gBuffer);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 50.0f);
+		glm::mat4 view = camera.GetViewMatrix();
+		glm::mat4 model = glm::mat4(1.0f);
+		shaderGeometryPass.Use();
+		shaderGeometryPass.SetMat4("projection", projection);
+		shaderGeometryPass.SetMat4("view", view);
+		// room cube
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0, 7.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(7.5f, 7.5f, 7.5f));
+		shaderGeometryPass.SetMat4("model", model);
+		shaderGeometryPass.SetInt("invertedNormals", 1); // invert normals as we're inside the cube
+		renderCube();
+		shaderGeometryPass.SetInt("invertedNormals", 0);
+		// backpack model on the floor
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.5f, 0.0));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+		model = glm::scale(model, glm::vec3(1.0f));
+		shaderGeometryPass.SetMat4("model", model);
+		bp.Draw(shaderGeometryPass, &model);
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		//// 2. generate SSAO texture
-		//  // ------------------------
-		//glBindFramebuffer(GL_FRAMEBUFFER, ssaoFBO);
-		//glClear(GL_COLOR_BUFFER_BIT);
-		//shaderSSAO.Use();
-		//// Send kernel + rotation 
-		//for (unsigned int i = 0; i < 64; ++i)
-		//	shaderSSAO.SetVec3("samples[" + std::to_string(i) + "]", ssaoKernel[i]);
-		//shaderSSAO.SetMat4("projection", projection);
-		//glActiveTexture(GL_TEXTURE0);
-		//glBindTexture(GL_TEXTURE_2D, gPosition);
-		//glActiveTexture(GL_TEXTURE1);
-		//glBindTexture(GL_TEXTURE_2D, gNormal);
-		//glActiveTexture(GL_TEXTURE2);
-		//glBindTexture(GL_TEXTURE_2D, noiseTexture);
-		//renderQuad();
-		//glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		// 2. generate SSAO texture
+		  // ------------------------
+		glBindFramebuffer(GL_FRAMEBUFFER, ssaoFBO);
+		glClear(GL_COLOR_BUFFER_BIT);
+		shaderSSAO.Use();
+		// Send kernel + rotation 
+		for (unsigned int i = 0; i < 64; ++i)
+			shaderSSAO.SetVec3("samples[" + std::to_string(i) + "]", ssaoKernel[i]);
+		shaderSSAO.SetMat4("projection", projection);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, gPosition);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, gNormal);
+		glActiveTexture(GL_TEXTURE2);
+		glBindTexture(GL_TEXTURE_2D, noiseTexture);
+		renderQuad();
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		//// 3. blur SSAO texture to remove noise
-		//// ------------------------------------
-		//glBindFramebuffer(GL_FRAMEBUFFER, ssaoBlurFBO);
-		//glClear(GL_COLOR_BUFFER_BIT);
-		//shaderSSAOBlur.Use();
-		//glActiveTexture(GL_TEXTURE0);
-		//glBindTexture(GL_TEXTURE_2D, ssaoColorBuffer);
-		//renderQuad();
-		//glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		// 3. blur SSAO texture to remove noise
+		// ------------------------------------
+		glBindFramebuffer(GL_FRAMEBUFFER, ssaoBlurFBO);
+		glClear(GL_COLOR_BUFFER_BIT);
+		shaderSSAOBlur.Use();
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, ssaoColorBuffer);
+		renderQuad();
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		//// 4. lighting pass: traditional deferred Blinn-Phong lighting with added screen-space ambient occlusion
-		//// -----------------------------------------------------------------------------------------------------
-		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		//shaderLightingPass.Use();
-		//// send light relevant uniforms
-		//glm::vec3 lightPosView = glm::vec3(camera.GetViewMatrix() * glm::vec4(lightPos, 1.0));
-		//shaderLightingPass.SetVec3("light.Position", lightPosView);
-		//shaderLightingPass.SetVec3("light.Color", lightColor);
-		//// Update attenuation parameters
-		//const float linear = 0.09;
-		//const float quadratic = 0.032;
-		//shaderLightingPass.SetFloat("light.Linear", linear);
-		//shaderLightingPass.SetFloat("light.Quadratic", quadratic);
-		//glActiveTexture(GL_TEXTURE0);
-		//glBindTexture(GL_TEXTURE_2D, gPosition);
-		//glActiveTexture(GL_TEXTURE1);
-		//glBindTexture(GL_TEXTURE_2D, gNormal);
-		//glActiveTexture(GL_TEXTURE2);
-		//glBindTexture(GL_TEXTURE_2D, gAlbedo);
-		//glActiveTexture(GL_TEXTURE3); // add extra SSAO texture to lighting pass
-		//glBindTexture(GL_TEXTURE_2D, ssaoColorBufferBlur);
-		//renderQuad();
+		// 4. lighting pass: traditional deferred Blinn-Phong lighting with added screen-space ambient occlusion
+		// -----------------------------------------------------------------------------------------------------
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		shaderLightingPass.Use();
+		// send light relevant uniforms
+		glm::vec3 lightPosView = glm::vec3(camera.GetViewMatrix() * glm::vec4(lightPos, 1.0));
+		shaderLightingPass.SetVec3("light.Position", lightPosView);
+		shaderLightingPass.SetVec3("light.Color", lightColor);
+		// Update attenuation parameters
+		const float linear = 0.09;
+		const float quadratic = 0.032;
+		shaderLightingPass.SetFloat("light.Linear", linear);
+		shaderLightingPass.SetFloat("light.Quadratic", quadratic);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, gPosition);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, gNormal);
+		glActiveTexture(GL_TEXTURE2);
+		glBindTexture(GL_TEXTURE_2D, gAlbedo);
+		glActiveTexture(GL_TEXTURE3); // add extra SSAO texture to lighting pass
+		glBindTexture(GL_TEXTURE_2D, ssaoColorBufferBlur);
+		renderQuad();
 
 
 
