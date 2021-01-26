@@ -167,9 +167,13 @@
     <Text Include="FramebufferScreenFS.txt" />
     <Text Include="FramebufferScreenVS.txt" />
     <Text Include="FramebufferVS.txt" />
-    <Text Include="geometry_shaderFS.txt" />
-    <Text Include="geometry_shaderGS.txt" />
-    <Text Include="geometry_shaderVS.txt" />
+    <Text Include="FS_Geo.txt" />
+    <Text Include="GS_Geo.txt" />
+    <Text Include="LightingFS.txt" />
+    <Text Include="LightingVS.txt" />
+    <Text Include="LoadModelFS.txt" />
+    <Text Include="LoadModelVS.txt" />
+    <Text Include="L_CubeFS.txt" />
     <Text Include="parallaxMappingFS.txt" />
     <Text Include="parallaxMappingVS.txt" />
     <Text Include="SkyboxFS.txt" />
@@ -183,8 +187,11 @@
     <Text Include="StencilFS.txt" />
     <Text Include="StencilVS.txt" />
     <Text Include="Stencil_single_colour.txt" />
+    <Text Include="test_lightFS.txt" />
+    <Text Include="Test_lightVS.txt" />
     <Text Include="ToonFS.txt" />
     <Text Include="ToonVS.txt" />
+    <Text Include="VS_Geo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

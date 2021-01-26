@@ -165,13 +165,34 @@
     <Text Include="parallaxMappingFS.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="geometry_shaderVS.txt">
+    <Text Include="VS_Geo.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="geometry_shaderFS.txt">
+    <Text Include="FS_Geo.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="geometry_shaderGS.txt">
+    <Text Include="GS_Geo.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="LightingVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="LightingFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Test_lightVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="test_lightFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="L_CubeFS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="LoadModelVS.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="LoadModelFS.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
